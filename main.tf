@@ -25,5 +25,5 @@ resource ranchervm_instance "test" {
 }
 
 output "private_ip" {
-  value = "${ranchervm_instance.test.*.ip}"
+  value = "${ranchervm_instance.test.ip}"
 }

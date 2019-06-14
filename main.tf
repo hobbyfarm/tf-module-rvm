@@ -5,9 +5,14 @@ variable "disk" {}
 variable "image" {}
 variable "endpoint" {}
 variable "name" {}
+variable "access_key" {}
+variable "secret_key" {}
 
 provider "ranchervm" {
-	endpoint = "${var.endpoint}"
+  endpoint = "${var.endpoint}"
+  insecure = true
+  access_key = "${var.access_key}"
+  secret_key = "${var.secret_key}"
 }
 
 resource ranchervm_credential "test-cred" {
